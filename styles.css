@@ -1,0 +1,26 @@
+*{
+    margin: 0%;
+}
+
+.head{
+    text-align: center;
+    background-color: gray;
+    padding: 20px;
+    font-size: x-large;
+    color:white;
+    box-shadow: red;
+}
+
+.add{
+    margin-top: 20px;
+   text-align: center;
+
+}
+
+#newbook{
+    width: 200px;
+    height:50px;
+    border-radius: 10%;
+    font-size: larger;
+    border-style: none;
+}
