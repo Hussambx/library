@@ -17,6 +17,38 @@
 
 }
 
+.popup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    width: 14%;
+    margin-left: 43%;
+    background-color: lightgrey;
+   padding: 5px;
+   margin-top: 50px;
+   border-radius: 9px;
+    
+     box-shadow: 1px 1px 10px black;
+}
+.popup>input,button{
+  text-align: center;
+  margin-top: 10px;
+    border-style: none;
+  height: 40px;
+  border-radius: 9px;
+  color: black;
+  font-size: large;
+}
+h2{
+    text-align: center;
+}
+.popup>button{
+    background-color: darkgreen;
+    color: white;
+}
+
+
 #newbook{
     width: 200px;
     height:50px;
