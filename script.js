@@ -8,7 +8,9 @@ function popup(){
 document.querySelector('form').addEventListener('submit', (e) => {
   const formData = new FormData(e.target);
  
-
+  e.preventDefault() 
+  ui.style.display = "none";
+  ui.reset();
   let bookx = new book(formData.get('title'),formData.get('title'),formData.get('pages'));
   bookshelf.push(bookx);
 create(bookx)
@@ -17,11 +19,7 @@ alert(bookx.title);
 
 
 function create(book){
-
-
-
-
-
+  
 
 }
 
