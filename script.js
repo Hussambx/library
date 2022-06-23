@@ -7,7 +7,6 @@ function popup(){
 
 document.querySelector('form').addEventListener('submit', (e) => {
   const formData = new FormData(e.target);
- 
   e.preventDefault() 
   ui.style.display = "none";
   ui.reset();
@@ -32,6 +31,7 @@ pagesx.innerText = book.pages;
 read.innerText = "Read";
 remove.innerText = "Remove";
 remove.id = book.title;
+remove.class = "removal";
 document.getElementById('main').appendChild(div);
 
 div.appendChild(titlex);
@@ -39,11 +39,20 @@ div.appendChild(authorx);
 div.appendChild(pagesx);
 div.appendChild(read);
 div.appendChild(remove);
-
+removex(remove);
 }
 
 
-
+function removex(tar){
+tar.addEventListener("mousedown",function(e){
+for(const books of bookshelf){
+  if(books.title==e.target.id){
+   bookshelf.splice(books);
+   alert(bookshelf.length);
+  }
+}
+});
+}
 
 
 
