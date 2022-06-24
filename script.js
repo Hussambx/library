@@ -10,9 +10,8 @@ document.querySelector('form').addEventListener('submit', (e) => {
   e.preventDefault() 
   ui.style.display = "none";
   ui.reset();
-  var div = document.createElement("div");
- 
-  var bookx = new book(formData.get('title'),formData.get('title'),formData.get('pages'),div);
+  let div = document.createElement("div");
+  let bookx = new book(formData.get('title'),formData.get('title'),formData.get('pages'),div);
   bookshelf.push(bookx);
 create(bookx,div)
 });
@@ -39,19 +38,14 @@ div.appendChild(authorx);
 div.appendChild(pagesx);
 div.appendChild(read);
 div.appendChild(removea);
-const man = div.parentNode;
 removex(removea,div);
 }
 
 
-function removex(tar,diva){
+function removex(tar){
 tar.addEventListener("mousedown",function(e){
-  console.log("button pressed: "+e.target.id)
-  console.log("length of array"+bookshelf.length);
   for(let i =0; i<bookshelf.length; i++){
     if(bookshelf[i].title==e.target.id){
-     console.log("found");
-     console.log("location of #"+i);
    document.getElementById('main').removeChild(bookshelf[i].div);
    bookshelf.splice(i,1);
     }
@@ -60,13 +54,8 @@ tar.addEventListener("mousedown",function(e){
 }
 
 function book(title,author,pages,div){
-
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.div = div;
-
-  this.saytitle= function(){
-    return this.title;
-  }
   }
