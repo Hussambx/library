@@ -11,12 +11,13 @@ document.querySelector('form').addEventListener('submit', (e) => {
   ui.style.display = "none";
   ui.reset();
   let div = document.createElement("div");
+  div.style.boxShadow = '1px 1px 10px red';
   let bookx = new book(formData.get('title'),formData.get('title'),formData.get('pages'),div);
   bookshelf.push(bookx);
 create(bookx,div)
 });
 
-
+//Create function creates the actual html elements assocaited with the book menu UI 
 function create(book,div){
   
   let titlex = document.createElement("h3");
@@ -27,7 +28,6 @@ function create(book,div){
 titlex.innerText = book.title;
 authorx.innerText = book.author;
 pagesx.innerText = book.pages;
-div.class = book.title;
 read.innerText = "Read";
 removea.innerText = "Remove";
 removea.id = book.title;
@@ -41,7 +41,7 @@ div.appendChild(removea);
 removex(removea,div);
 }
 
-
+//Remove functions adds an event listener as well as removing the book from the array + removing html elements when needed 
 function removex(tar){
 tar.addEventListener("mousedown",function(e){
   for(let i =0; i<bookshelf.length; i++){
@@ -52,7 +52,7 @@ tar.addEventListener("mousedown",function(e){
   }
 });
 }
-
+//Book function defines book 
 function book(title,author,pages,div){
   this.title = title;
   this.author = author;
