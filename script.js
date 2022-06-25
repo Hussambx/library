@@ -5,6 +5,9 @@ function popup(){
   ui.style.display = "flex"; 
 }
 
+function closex(){
+  ui.style.display = "none"; 
+  }
 
 document.querySelector('form').addEventListener('submit', (e) => {
   const formData = new FormData(e.target);
@@ -96,3 +99,4 @@ function book(title,author,pages,div){
     }
    });
   }
+
