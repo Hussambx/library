@@ -21,8 +21,8 @@ if(unique==true){
   ui.style.display = "none";
   ui.reset();
   let div = document.createElement("div");
-  div.style.boxShadow = '1px 1px 10px red';
-  let bookx = new book(formData.get('title'),formData.get('title'),formData.get('pages'),div);
+  div.style.boxShadow = '1px 1px 10px darkgreen';
+  let bookx = new book(formData.get('title'),formData.get('author'),formData.get('pages'),div);
   bookshelf.push(bookx);
 create(bookx,div)
 }
@@ -41,10 +41,10 @@ titlex.innerText = "'"+book.title+"'";
 titlex.style.fontWeight = "bold";
 authorx.innerText = book.author;
 pagesx.innerText = book.pages+" pages";
-read.innerText = "Finished";
+read.innerText = "Read";
 read.onclick ="finished()";
 read.id = book.title;
-read.style.backgroundColor = "lightgreen";
+read.style.backgroundColor = "darkgreen";
 removea.innerText = "Remove";
 removea.id = book.title;
 removea.class = "removal";
@@ -83,8 +83,15 @@ function book(title,author,pages,div){
    read.addEventListener("mousedown",function(e){
     for(let i =0; i<bookshelf.length; i++){
       if(bookshelf[i].title==e.target.id){
-     bookshelf[i].div.style.boxShadow  = '1px 1px 10px green';
-     bookshelf[i].div.removeChild(e.target);
+        if(e.target.innerText=="Not Read"){
+          bookshelf[i].div.style.boxShadow  = '1px 1px 10px green';
+          e.target.innerText = "Read"
+          e.target.style.backgroundColor="darkgreen";
+        }else{
+          bookshelf[i].div.style.boxShadow  = '1px 1px 10px darkred';
+          e.target.innerText = "Not Read"
+          e.target.style.backgroundColor ="darkred";
+        }
       }
     }
    });
