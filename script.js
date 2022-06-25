@@ -25,10 +25,12 @@ function create(book,div){
   let pagesx = document.createElement("h3");
   let read  = document.createElement("button");
   let removea = document.createElement("button");
-titlex.innerText = book.title;
+titlex.innerText = "'"+book.title+"'";
+titlex.style.fontWeight = "bold";
 authorx.innerText = book.author;
-pagesx.innerText = book.pages;
-read.innerText = "Read";
+pagesx.innerText = book.pages+" pages";
+read.innerText = "Finished";
+read.onclick ="finished()";
 removea.innerText = "Remove";
 removea.id = book.title;
 removea.class = "removal";
@@ -39,6 +41,7 @@ div.appendChild(pagesx);
 div.appendChild(read);
 div.appendChild(removea);
 removex(removea,div);
+finished (read);
 }
 
 //Remove functions adds an event listener as well as removing the book from the array + removing html elements when needed 
@@ -52,10 +55,18 @@ tar.addEventListener("mousedown",function(e){
   }
 });
 }
+
 //Book function defines book 
 function book(title,author,pages,div){
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.div = div;
+  }
+
+
+  function finished(read){
+   read.addEventListener("mousedown",function(e){
+    
+   });
   }
