@@ -1,4 +1,5 @@
 let bookshelf = [];
+let unique = true;
 const ui =   document.querySelector(".popup");
 function popup(){
   ui.style.display = "flex"; 
@@ -8,6 +9,15 @@ function popup(){
 document.querySelector('form').addEventListener('submit', (e) => {
   const formData = new FormData(e.target);
   e.preventDefault() 
+  //Checks if the title if it isnt alert user to set a new title 
+for(booka of bookshelf){
+  if(booka.title==formData.get('title')){
+    alert("Please use a new Title:");
+    unique = false;
+  }
+}
+
+if(unique==true){
   ui.style.display = "none";
   ui.reset();
   let div = document.createElement("div");
@@ -15,6 +25,8 @@ document.querySelector('form').addEventListener('submit', (e) => {
   let bookx = new book(formData.get('title'),formData.get('title'),formData.get('pages'),div);
   bookshelf.push(bookx);
 create(bookx,div)
+}
+unique = true;
 });
 
 //Create function creates the actual html elements assocaited with the book menu UI 
