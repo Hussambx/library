@@ -71,7 +71,7 @@ h2{
 #main>div{
     background-color: lightgray;
     width: 360px;
-    height: 360px;
+    height: 300px;
     border-radius: 11px;
     justify-content: center;
     padding-top: 20px;
@@ -79,14 +79,14 @@ h2{
 
 #main>div>h3{
     text-align: center;
-    font-size: xx-large;
+    font-size: x-large;
     margin-top: 20px;
 }
 
 #main>div>button{
-    margin-left: 30%;
+    margin-left: 10%;
     border-radius: 9px;
-    width: 40%;
+    width: 80%;
     height: 40px;
     background-color: darkred;
     color: white;
