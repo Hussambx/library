@@ -31,6 +31,8 @@ authorx.innerText = book.author;
 pagesx.innerText = book.pages+" pages";
 read.innerText = "Finished";
 read.onclick ="finished()";
+read.id = book.title;
+read.style.backgroundColor = "lightgreen";
 removea.innerText = "Remove";
 removea.id = book.title;
 removea.class = "removal";
@@ -67,6 +69,11 @@ function book(title,author,pages,div){
 
   function finished(read){
    read.addEventListener("mousedown",function(e){
-    
+    for(let i =0; i<bookshelf.length; i++){
+      if(bookshelf[i].title==e.target.id){
+     bookshelf[i].div.style.boxShadow  = '1px 1px 10px green';
+     bookshelf[i].div.removeChild(e.target);
+      }
+    }
    });
   }
